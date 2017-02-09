@@ -6,26 +6,17 @@ document.addEventListener('DOMContentLoaded', function () {
   var intro = document.getElementById('container');
   intro.style.marginBottom = - intro.offsetHeight / 5 + 'px';
 }, false);
-(function() {
-    var header = new Headroom(document.querySelector("#header"), {
-        tolerance: 5,
-        offset : 205,
-        classes: {
-          initial: "animated",
-          pinned: "slideDown",
-          unpinned: "slideUp"
-        }
-    });
-    header.init();
-
-    var bttHeadroom = new Headroom(document.getElementById("btt"), {
-        tolerance : 0,
-        offset : 500,
-        classes : {
-            initial : "slide",
-            pinned : "slide--reset",
-            unpinned : "slide--down"
-        }
-    });
-    bttHeadroom.init();
-}());
+$(function() {
+  $('a[href*="#"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
+});
