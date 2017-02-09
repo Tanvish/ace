@@ -202,7 +202,7 @@ h1::after {
 }
 .about{
   position: relative;
-  background: url('images/about.jpg');
+  background: url('about.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -250,7 +250,7 @@ h1::after {
   margin-left: -10px;
   width:93.6%;
   padding: 50px;
-  background:url('images/contact.jpg');
+  background:url('contact.jpg');
   background-attachment: fixed;
   background-size: cover;
 
